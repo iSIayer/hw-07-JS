@@ -10,9 +10,9 @@ const refs = {
 function createPhotoCardMarkup(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
-      return `<a class="gallery__item" href="${original}">
+      return `<li><a class="gallery__item" href="${original}">
   <img class="gallery__image" src="${preview}" alt="${description}" />
-</a>`;
+</a></li>`;
     })
     .join("");
 }
@@ -26,7 +26,7 @@ refs.gallery.insertAdjacentHTML(
 const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
-  overlayOpacity: 1.2,
+  overlayOpacity: 0.3,
 });
 
 // Control lazy loading
